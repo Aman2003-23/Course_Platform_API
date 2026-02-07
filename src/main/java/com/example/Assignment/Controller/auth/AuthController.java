@@ -18,6 +18,7 @@ import java.util.Map;
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 @Tag(name = "Authentication")
+@CrossOrigin(origins = "*")
 public class AuthController {
 
     private final AuthService authService;
