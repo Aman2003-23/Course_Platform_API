@@ -15,7 +15,7 @@ import java.util.Map;
 @RequestMapping("/api/enrollments")
 @RequiredArgsConstructor
 @Tag(name = "Progress")
-@CrossOrigin(origins = "*")
+
 public class ProgressController {
 
     private final ProgressService progressService;

@@ -15,7 +15,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @Tag(name = "Enrollment")
-@CrossOrigin(origins = "*")
+
 public class EnrollmentController {
 
     private final EnrollmentService enrollmentService;

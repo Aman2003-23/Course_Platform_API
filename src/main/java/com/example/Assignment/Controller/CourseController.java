@@ -20,7 +20,7 @@ import java.util.Map;
 @RequestMapping("/api/courses")
 @RequiredArgsConstructor
 @Tag(name="Courses")
-@CrossOrigin(origins = "*")
+
 
 public class CourseController {
     private final CourseBrowserService courseBrowserService;
