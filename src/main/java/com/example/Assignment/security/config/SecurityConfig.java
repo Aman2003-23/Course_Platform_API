@@ -39,28 +39,29 @@ public class SecurityConfig {
                         sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                HttpMethod.OPTIONS,"/**",
-                                "/",
-                                "/api/auth/**",
-
-                                //swagger ui
-                                "/swagger-ui/**",
-                                "/swagger-ui.html",
-                                "/v3/api-docs/**",
-                                //public api
-                                "/api/courses/**",
-
-                                "/api/search/**"
-                        ).permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/v3/api-docs/**", "/api/courses/**","/api/search/**").permitAll()
                         .anyRequest().authenticated()
                 );
               //  .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
+//    HttpMethod.OPTIONS,"/**",
+//            "/",
+//            "/api/auth/**",
+//
+//            //swagger ui
+//            "/swagger-ui/**",
+//            "/swagger-ui.html",
+//            "/v3/api-docs/**",
+//            //public api
+//            "/api/courses/**",
+//
+//            "/api/search/**"
 
-  //Auth manager setup
+
+    //Auth manager setup
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
 
