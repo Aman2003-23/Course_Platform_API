@@ -31,11 +31,12 @@ public class EnrollmentController {
     public Map<String, Object> enroll(
             @PathVariable String courseId) {
 
-        enrollmentService.enroll(courseId);
+      EnrollmentResponseDto dto=  enrollmentService.enroll(courseId);
 
         return Map.of(
                 "courseId", courseId,
-                "message", "Enrolled successfully"
+                "message", "Enrolled successfully",
+                "enrollmentId", dto.enrollmentId()
         );
     }
 }
