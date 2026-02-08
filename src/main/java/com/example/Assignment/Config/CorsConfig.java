@@ -13,7 +13,7 @@ public class CorsConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowCredentials(true);
-        configuration.addAllowedOriginPattern("*"); // allow all origins
+        configuration.addAllowedOriginPattern("https://courseplatformapi-production.up.railway.app"); // allow all origins
         configuration.addAllowedHeader("*");        // allow all headers
         configuration.addAllowedMethod("*");        // allow all HTTP methods (GET, POST, etc.)
 
